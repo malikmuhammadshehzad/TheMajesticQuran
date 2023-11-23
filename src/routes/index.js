@@ -14,7 +14,7 @@ const AppNavigation = () => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="root" component={TabNavigation}/>
         <Stack.Screen name="homeScreen" component={HomeScreen} />
-        <Stack.Screen name="arabicAndEnglish" component={arabicAndEnglish}/>
+        {/* <Stack.Screen name="arabicAndEnglish" component={arabicAndEnglish}/> */}
         {/* <Stack.Screen name="favorite" component={Favorite}/>
         <Stack.Screen name="search" component={SearchScreen}/>
         <Stack.Screen name="todoList " component={TodoScreen}/> */}

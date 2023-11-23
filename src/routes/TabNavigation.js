@@ -11,6 +11,8 @@ import SearchScreen from '../screen/searchScreen';
 import TodoScreen from '../screen/todoScreen';
 import HomeScreen from '../screen/home';
 import Favorite from '../screen/favorite';
+import { ICONS } from '../assets';
+import { arabicAndEnglish } from '../screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +34,7 @@ const Navigation = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({color}) => (
-            <FontAwesome name="home" size={30} color={color} />
+            <FontAwesome name="home" size={33} color={color} />
           ),
         }}
       />
@@ -41,7 +43,8 @@ const Navigation = () => {
         component={Favorite}
         options={{
           tabBarIcon: ({color}) => (
-            <Fontisto name="favorite" size={30} color={color} />
+           
+           <ICONS.FavoriteIcon color={color} />
           ),
         }}
       />
@@ -50,7 +53,7 @@ const Navigation = () => {
         component={TodoScreen}
         options={{
           tabBarIcon: ({color}) => (
-            <FontAwesome5 name="edit" size={30} color={color} />
+            <FontAwesome5 name="edit" size={27} color={color} />
           ),
         }}
       />
@@ -59,7 +62,7 @@ const Navigation = () => {
         component={SearchScreen}
         options={{
           tabBarIcon: ({color}) => (
-            <FontAwesome name="search" size={30} color={color} />
+            <FontAwesome name="search" size={27} color={color} />
           ),
         }}
       />
@@ -68,8 +71,15 @@ const Navigation = () => {
         component={MenuScreen}
         options={{
           tabBarIcon: ({color}) => (
-            <Entypo name="menu" size={30} color={color} />
+            <Entypo name="menu" size={35} color={color} />
           ),
+        }}
+      />
+      <Tab.Screen
+        name="arabicAndEnglish"
+        component={arabicAndEnglish}
+        options={{
+          tabBarItemStyle:{display:'none'}
         }}
       />
     </Tab.Navigator>

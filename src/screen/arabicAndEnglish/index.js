@@ -44,7 +44,7 @@ const ArabicAndEnglish = () => {
       arabicName: 'ٱلأنعام',
     },
   ];
-
+  
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headingContainer}>
@@ -64,7 +64,7 @@ const ArabicAndEnglish = () => {
             <Text style={styles.index}>{item.id}</Text>
             <View style={styles.nameContainer}>
               <Text style={styles.engName}>{item.englishName} </Text>
-              <Text style={styles.romanName}>{item.romanName}</Text>
+              <Text  numberOfLines={1} style={styles.romanName}>{item.romanName}</Text>
             </View>
             <Text style={styles.arabicName}>{item.arabicName}</Text>
           </View>

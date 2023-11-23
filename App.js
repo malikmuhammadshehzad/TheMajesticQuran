@@ -2,6 +2,8 @@ import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import AppNavigation from './src/routes';
+import { Provider } from 'react-redux'
+import { store } from './src/Redux/Store';
 const App = () => {
   // useEffect(() => {
   //   SplashScreen.show()
@@ -15,7 +17,11 @@ const App = () => {
   //   };
   // }, []);
 
-  return <AppNavigation />;
+  return(
+     <Provider store={store} > 
+       <AppNavigation />
+     </Provider>
+  )
 };
 
 export default App;
