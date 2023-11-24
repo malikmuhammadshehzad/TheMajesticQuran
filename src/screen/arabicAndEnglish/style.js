@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   surahContainer: {
     backgroundColor: 'white',
-    height:95,
+    height: 95,
     marginBottom: 7,
     flexDirection: 'row',
     alignItems: 'center',
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     width: '15%',
     fontSize: 22,
     fontWeight: '700',
-    paddingLeft:9,
+    paddingLeft: 9,
     color: COLORS.navyBlue,
   },
   nameContainer: {

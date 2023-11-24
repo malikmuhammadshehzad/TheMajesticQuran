@@ -12,7 +12,7 @@ import TodoScreen from '../screen/todoScreen';
 import HomeScreen from '../screen/home';
 import Favorite from '../screen/favorite';
 import {ICONS} from '../assets';
-import {arabicAndEnglish} from '../screen';
+import {SingleSurah, arabicAndEnglish} from '../screen';
 import DrawerNavigation from './DrawerNavigation';
 const Tab = createBottomTabNavigator();
 
@@ -85,6 +85,13 @@ const TabNavigation = () => {
         <Tab.Screen
           name="arabicAndEnglish"
           component={arabicAndEnglish}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="singleSurah"
+          component={SingleSurah}
           options={{
             tabBarItemStyle: {display: 'none'},
           }}
