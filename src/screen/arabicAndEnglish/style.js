@@ -23,11 +23,10 @@ const styles = StyleSheet.create({
   },
   mainSurahContainer: {
     flex: 1,
-    // backgroundColor: 'coral',
   },
   surahContainer: {
     backgroundColor: 'white',
-    height:100,
+    height:95,
     marginBottom: 7,
     flexDirection: 'row',
     alignItems: 'center',
@@ -35,33 +34,29 @@ const styles = StyleSheet.create({
     marginVertical: 12,
   },
   index: {
-    width: '10%',
-    // backgroundColor: 'coral',
-    fontSize: 27,
+    width: '15%',
+    fontSize: 22,
     fontWeight: '700',
-    paddingLeft: 7,
+    paddingLeft:9,
     color: COLORS.navyBlue,
   },
   nameContainer: {
-    width: '64%',
-    // backgroundColor:'blue',
-    paddingLeft: 12,
+    width: '53%',
+    paddingLeft: 9,
   },
   engName: {
-    fontSize: 29,
+    fontSize: 27,
     fontWeight: '500',
     color: COLORS.black,
   },
   romanName: {
-    fontSize: 19,
+    fontSize: 17,
     color: COLORS.black,
   },
   arabicName: {
-    width: '26%',
-     paddingRight:7,
+    width: '30%',
     fontSize: 27,
     color: COLORS.navyBlue,
-    // backgroundColor:'yellow'
   },
 });
 export default styles;

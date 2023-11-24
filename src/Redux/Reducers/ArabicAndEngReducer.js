@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 export const ArabicAndEngData = createAsyncThunk('ArabicAndEngData', async thunkApi => {
   try {
     const response = await api.get('/surah');
-    console.log(' Product response :', response.data.message);
+    // console.log(' Product response :', response.data.message);
     return response.data;
   } catch (error) {
     return thunkApi.rejectWithValue(error);
@@ -23,16 +23,14 @@ const ArabicAndEngSlice = createSlice({
   name: 'AllSurah',
   initialState: INITIAL_STATE,
   reducers: {
-    productRendering: (state, action) => {
-      state.surah = action.payload;
-    },
+  
   },
   extraReducers: builder => {
     builder.addCase(ArabicAndEngData.pending, state => {
       state.isLoading = true;
     });
     builder.addCase(ArabicAndEngData.fulfilled, (state, action) => {
-      console.log("🚀 ~ file: ArabicAndEngReducer.js:35 ~ builder.addCase ~ action:", action.payload)
+      // console.log("🚀 ~ file: ArabicAndEngReducer.js:35 ~ builder.addCase ~ action:", action.payload)
       
       state.surah = action.payload;
       state.isSuccess=true

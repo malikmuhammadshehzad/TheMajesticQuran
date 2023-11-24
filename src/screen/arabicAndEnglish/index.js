@@ -46,6 +46,12 @@ const ArabicAndEnglish = () => {
       romanName: 'The Feast',
       arabicName: 'ٱلأنعام',
     },
+    {
+      id: '6.',
+      englishName: 'Al-Anam',
+      romanName: 'The Feast',
+      arabicName: 'ٱلأنعام',
+    },
   ];
    const {surah} = useSelector(state => state.ArabicAndEng )
    const surahData = surah.message 
@@ -65,17 +71,17 @@ const ArabicAndEnglish = () => {
       <SearchInput />
       <FlatList
         style={styles.mainSurahContainer}
-        data={data}
-        keyExtractor={item => `${item.englishName}`}
+        data={surahData}
+        // keyExtractor={item => `${item.englishName}`}
         showsVerticalScrollIndicator={false}
-        renderItem={({item}) => (
+        renderItem={({item }) => (
           <View style={styles.surahContainer}>
-            <Text style={styles.index}>{item.id}</Text>
+            <Text style={styles.index}>{item.surah_number}8.</Text>
             <View style={styles.nameContainer}>
-              <Text style={styles.engName}>{item.englishName} </Text>
-              <Text  numberOfLines={1} style={styles.romanName}>{item.romanName}</Text>
+              <Text style={styles.engName}>{item.roman_name} </Text>
+              <Text    style={styles.romanName}>{item.title}</Text>
             </View>
-            <Text style={styles.arabicName}>{item.arabicName}</Text>
+            <Text style={styles.arabicName}>{item.arabic_name}</Text>
           </View>
         )}
       />
