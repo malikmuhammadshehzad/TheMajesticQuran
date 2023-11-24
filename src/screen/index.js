@@ -3,3 +3,4 @@ export {default as Favorite} from './favorite';
 export {default as arabicAndEnglish} from './arabicAndEnglish';
 export {default as SearchScreen} from './searchScreen';
 export {default as TodoScreen} from './todoScreen';
+export {default as  MenuScreen} from './menu';
