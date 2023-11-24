@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import api from '../../api';
 
 const INITIAL_STATE = {
-  books: [],
+   surah: [],
   isSuccess:false,
   isLoading: false,
   isError: false,
@@ -11,8 +11,8 @@ const INITIAL_STATE = {
 
 export const ArabicAndEngData = createAsyncThunk('ArabicAndEngData', async thunkApi => {
   try {
-    const response = await api.get('/books');
-    console.log(' Product response :', response.data);
+    const response = await api.get('/surah');
+    console.log(' Product response :', response.data.message);
     return response.data;
   } catch (error) {
     return thunkApi.rejectWithValue(error);
@@ -20,11 +20,11 @@ export const ArabicAndEngData = createAsyncThunk('ArabicAndEngData', async thunk
 });
 
 const ArabicAndEngSlice = createSlice({
-  name: 'AllBooks',
+  name: 'AllSurah',
   initialState: INITIAL_STATE,
   reducers: {
     productRendering: (state, action) => {
-      state.books = action.payload;
+      state.surah = action.payload;
     },
   },
   extraReducers: builder => {
@@ -32,7 +32,9 @@ const ArabicAndEngSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(ArabicAndEngData.fulfilled, (state, action) => {
-      state.books = action.payload;
+      console.log("🚀 ~ file: ArabicAndEngReducer.js:35 ~ builder.addCase ~ action:", action.payload)
+      
+      state.surah = action.payload;
       state.isSuccess=true
       state.isLoading = false;
     });

@@ -1,11 +1,14 @@
 import {FlatList, Pressable, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './style';
 import {ICONS} from '../../assets';
 import {SearchInput} from '../../components';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch, useSelector} from 'react-redux';
+import { ArabicAndEngData } from '../../Redux/Reducers/ArabicAndEngReducer';
 const ArabicAndEnglish = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const data = [
     {
       id: '1.',
@@ -44,7 +47,13 @@ const ArabicAndEnglish = () => {
       arabicName: 'ٱلأنعام',
     },
   ];
-  
+   const {surah} = useSelector(state => state.ArabicAndEng )
+   const surahData = surah.message 
+   console.log("surahData" ,surahData);
+   useEffect(() => {
+     dispatch(ArabicAndEngData())
+   }, [])
+   
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headingContainer}>

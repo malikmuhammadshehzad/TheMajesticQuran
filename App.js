@@ -5,17 +5,17 @@ import AppNavigation from './src/routes';
 import { Provider } from 'react-redux'
 import { store } from './src/Redux/Store';
 const App = () => {
-  // useEffect(() => {
-  //   SplashScreen.show()
-  //   // Hide the splash screen after 3 seconds
-  //   const timeoutId = setTimeout(() => {
-  //     SplashScreen.hide();
-  //     console.log("SplashScreen");
-  //   }, 3000);
-  //   return () => {
-  //     clearTimeout(timeoutId);
-  //   };
-  // }, []);
+  useEffect(() => {
+    
+    // Hide the splash screen after 3 seconds
+    const timeoutId = setTimeout(() => {
+      SplashScreen.hide();
+      console.log("SplashScreen");
+    }, 3000);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   return(
      <Provider store={store} > 
