@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
     marginLeft: '14%',
     fontWeight: '700',
   },
+  indicator:{
+ marginTop:230
+  },
   mainSurahContainer: {
     flex: 1,
   },

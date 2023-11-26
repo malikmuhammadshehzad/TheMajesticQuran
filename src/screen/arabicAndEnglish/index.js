@@ -1,4 +1,11 @@
-import {FlatList, Pressable, StyleSheet, Text, View} from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React, {useEffect} from 'react';
 import styles from './style';
 import {ICONS} from '../../assets';
@@ -11,12 +18,14 @@ const ArabicAndEnglish = () => {
   const dispatch = useDispatch();
 
   const {surah} = useSelector(state => state.ArabicAndEng);
-  const surahData = surah.message;
+  const surahData = surah?.message;
   // console.log('surahData', surahData);
   useEffect(() => {
     dispatch(ArabicAndEngData());
   }, []);
-
+  const handleSingleSurah = surah => {
+    navigation.navigate('singleSurah', {surah});
+  };
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headingContainer}>
@@ -29,28 +38,32 @@ const ArabicAndEnglish = () => {
         <Text style={styles.heading}> Arabic & English</Text>
       </View>
       <SearchInput />
-      <FlatList
-        style={styles.mainSurahContainer}
-        data={surahData}
-        // keyExtractor={item => `${item.englishName}`}
-        showsVerticalScrollIndicator={false}
-        renderItem={({item}) => (
-          <Pressable
-            style={styles.surahContainer}
-            onPress={() => navigation.navigate('singleSurah')}>
-            <Text style={styles.index}>{item.surah_number}8.</Text>
-            <View style={styles.nameContainer}>
-              <Text style={styles.engName}>{item.roman_name}</Text>
-              <Text style={styles.romanName}>{item.title}</Text>
-            </View>
-            <Text style={styles.arabicName}>{item.arabic_name}</Text>
-          </Pressable>
-        )}
-      />
+      {!surahData ? (
+        <ActivityIndicator style={styles.indicator} size="large" color="white" />
+      ) : (
+        <FlatList
+          style={styles.mainSurahContainer}
+          data={surahData}
+          // keyExtractor={item => `${item.englishName}`}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item}) => (
+            <Pressable
+              style={styles.surahContainer}
+              onPress={() => handleSingleSurah(item)}>
+              <Text style={styles.index}>{item.surah_number}9.</Text>
+              <View style={styles.nameContainer}>
+                <Text style={styles.engName}>{item.roman_name}</Text>
+                <Text style={styles.romanName}>{item.title}</Text>
+              </View>
+              <Text style={styles.arabicName}>{item.arabic_name}</Text>
+            </Pressable>
+          )}
+        />
+      )}
     </View>
   );
 };
 
 export default ArabicAndEnglish;
 
-StyleSheet;
+ 
