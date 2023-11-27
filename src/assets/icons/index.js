@@ -7,4 +7,6 @@ export const ICONS = {
   FavoriteIcon: require('./FavoriteIcon').default,
   PlayIcon: require('./PlayIcon').default,
    SquareIcon: require('./SquareIcon').default,
+    manIcon: require('./manIcon').default,
+     DownloadIcon: require('./DownlaodIcon').default,
 };

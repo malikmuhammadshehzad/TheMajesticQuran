@@ -28,6 +28,8 @@ const styles = StyleSheet.create({
   },
   romanName: {
     color: COLORS.white,
+    fontSize: 18,
+    fontWeight: '500',
   },
 });
 export default styles;

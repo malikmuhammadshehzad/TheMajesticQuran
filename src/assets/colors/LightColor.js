@@ -9,5 +9,6 @@ export default {
     white:'#FFFFFF',
     navyBlue:'#000080',
     darkBlue:'#002655',
-    yellow:'yellow'
+    yellow:'yellow',
+    red:'red'
   };

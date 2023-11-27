@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './style';
 import {ICONS} from '../../assets';
 import {SearchInput} from '../../components';
@@ -15,14 +15,32 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ArabicAndEngData} from '../../Redux/Reducers/ArabicAndEngReducer';
 const ArabicAndEnglish = () => {
   const navigation = useNavigation();
+  const [search, setSearch] = useState('');
+  const [ searchData, setSearchData] = useState([]);
   const dispatch = useDispatch();
 
-  const {surah} = useSelector(state => state.ArabicAndEng);
+  const {surah , isSuccess} = useSelector(state => state.ArabicAndEng);
   const surahData = surah?.message;
-  // console.log('surahData', surahData);
+  console.log('surahData', surahData);
   useEffect(() => {
     dispatch(ArabicAndEngData());
-  }, []);
+    if (isSuccess) {
+      setSearchData(surahData);
+    }
+  }, [isSuccess]);
+  useEffect(()=>{
+    if ( search && surahData) {
+      const filterData =surahData.filter(item=>{
+        const value = item.roman_name.toLowerCase();
+        return value.includes(search.toLowerCase());
+      })
+      setSearchData(filterData)
+    }else{
+      if (isSuccess) {
+        setSearchData(surahData)
+      }
+    }
+  },[search])
   const handleSingleSurah = surah => {
     navigation.navigate('singleSurah', {surah});
   };
@@ -37,14 +55,18 @@ const ArabicAndEnglish = () => {
         </Pressable>
         <Text style={styles.heading}> Arabic & English</Text>
       </View>
-      <SearchInput />
-      {!surahData ? (
+      <SearchInput
+        value={search}
+        placeholder={'Search...'}
+        onChangeText={text => setSearch(text)}
+       />
+      {!searchData ? (
         <ActivityIndicator style={styles.indicator} size="large" color="white" />
       ) : (
         <FlatList
           style={styles.mainSurahContainer}
-          data={surahData}
-          // keyExtractor={item => `${item.englishName}`}
+          data={searchData}
+          keyExtractor={item => `${item.id}-${item.title}`}
           showsVerticalScrollIndicator={false}
           renderItem={({item}) => (
             <Pressable

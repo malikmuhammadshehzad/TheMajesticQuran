@@ -14,8 +14,8 @@ const SurahFootNotes = () => {
         <View style={styles.mainContainer}>
           {item.surah.footnotes.map((val, index) => (
             <View key={index}>
-              <Text style={styles.title}>{val.word}</Text>
-              <Text style={styles.title}>{val.meaning}</Text>
+              <Text style={styles.title}> {val.word}</Text>
+              <Text style={styles.text}>{val.meaning}</Text>
             </View>
           ))}
         </View>
