@@ -10,6 +10,7 @@ import {
   TodoScreen,
   arabicAndEnglish,
 } from '../screen';
+import DrawerNavigation from './DrawerNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,7 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="root" component={TabNavigation} />
+        <Stack.Screen name="root" component={DrawerNavigation} />
         <Stack.Screen name="homeScreen" component={HomeScreen} />
         {/* <Stack.Screen name="arabicAndEnglish" component={arabicAndEnglish}/> */}
         {/* <Stack.Screen name="favorite" component={Favorite}/>

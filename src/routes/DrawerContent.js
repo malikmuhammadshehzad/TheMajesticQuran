@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     backgroundColor: 'white',
+    width: '50%'
   },
 });
 

@@ -8,5 +8,6 @@ export default {
     link:'#F76464',
     white:'#FFFFFF',
     navyBlue:'#000080',
-    darkBlue:'#002655'
+    darkBlue:'#002655',
+    yellow:'yellow'
   };

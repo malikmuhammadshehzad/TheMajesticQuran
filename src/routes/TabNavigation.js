@@ -1,6 +1,12 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, { useState } from 'react';
-import { Modal,} from 'react-native';
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import React, {useState} from 'react';
+import {Modal} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -14,9 +20,12 @@ import Favorite from '../screen/favorite';
 import {ICONS} from '../assets';
 import {SingleSurah, arabicAndEnglish} from '../screen';
 import DrawerNavigation from './DrawerNavigation';
+import {useNavigation, DrawerActions} from '@react-navigation/native';
+import DrawerContent from './DrawerContent';
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
+  const navigation = useNavigation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const openDrawer = () => {
@@ -73,12 +82,40 @@ const TabNavigation = () => {
             ),
           }}
         />
+        {/* <Tab.Screen
+          name="menu"
+          component={DrawerNavigation}
+          options={{
+            tabBarIcon: ({color}) => (
+              <Pressable
+                onPress={() =>
+                  navigation.dispatch(DrawerActions.openDrawer())
+                }>
+              </Pressable>
+              <Entypo name="menu" size={35} color={color} />
+            ),
+          }}
+          listeners={() => ({
+            tabPress: e => {
+              e.preventDefault();
+
+            }
+          })}
+        /> */}
         <Tab.Screen
           name="menu"
           component={DrawerNavigation}
           options={{
             tabBarIcon: ({color}) => (
               <Entypo name="menu" size={35} color={color} />
+            ),
+            tabBarPressColor: 'transparent',
+            tabBarPressAnimationEnabled: false,
+            tabBarButton: props => (
+              <TouchableOpacity
+                {...props}
+                onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+              />
             ),
           }}
         />
