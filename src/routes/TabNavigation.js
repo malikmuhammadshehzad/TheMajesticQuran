@@ -9,16 +9,23 @@ import React, {useState} from 'react';
 import {Modal} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
-import MenuScreen from '../screen/menu';
-import SearchScreen from '../screen/searchScreen';
 import TodoScreen from '../screen/todoScreen';
 import HomeScreen from '../screen/home';
 import Favorite from '../screen/favorite';
 import {ICONS} from '../assets';
-import {SingleSurah, arabicAndEnglish} from '../screen';
+import {
+  AudioQuran,
+  Hades,
+  Notes,
+  Podcast,
+  QuranArabic,
+  QuranEnglish,
+  SearchScreen,
+  SingleSurah,
+  arabicAndEnglish,
+} from '../screen';
 import DrawerNavigation from './DrawerNavigation';
 import {useNavigation, DrawerActions} from '@react-navigation/native';
 import DrawerContent from './DrawerContent';
@@ -82,26 +89,6 @@ const TabNavigation = () => {
             ),
           }}
         />
-        {/* <Tab.Screen
-          name="menu"
-          component={DrawerNavigation}
-          options={{
-            tabBarIcon: ({color}) => (
-              <Pressable
-                onPress={() =>
-                  navigation.dispatch(DrawerActions.openDrawer())
-                }>
-              </Pressable>
-              <Entypo name="menu" size={35} color={color} />
-            ),
-          }}
-          listeners={() => ({
-            tabPress: e => {
-              e.preventDefault();
-
-            }
-          })}
-        /> */}
         <Tab.Screen
           name="menu"
           component={DrawerNavigation}
@@ -133,20 +120,57 @@ const TabNavigation = () => {
             tabBarItemStyle: {display: 'none'},
           }}
         />
+
+        <Tab.Screen
+          name="quranArabic"
+          component={QuranArabic}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name= 'quranEnglish'
+          component={QuranEnglish}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="audioQuran"
+          component={AudioQuran}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="searchScreen"
+          component={SearchScreen}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="notes"
+          component={Notes}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="podcast"
+          component={Podcast}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="hades"
+          component={Hades}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
       </Tab.Navigator>
-      {/* <Modal
-        animationType="slide"
-        transparent={true}
-        visible={isDrawerOpen}
-        onRequestClose={closeDrawer}>
-        <View style={styles.modalContainer}>
-          
-          <Text>Drawer Content</Text>
-          <TouchableOpacity onPress={closeDrawer}>
-            <Text>Close Drawer</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal> */}
     </>
   );
 };

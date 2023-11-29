@@ -14,12 +14,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     marginBottom: 12,
+    justifyContent:'space-between'
   },
-  
   heading: {
     fontSize: 27,
     color: 'white',
-    marginLeft: '14%',
     fontWeight: '700',
   },
   indicator:{
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
   },
   surahContainer: {
     backgroundColor: 'white',
-    height: 95,
+    height: 85,
     marginBottom: 7,
     flexDirection: 'row',
     alignItems: 'center',

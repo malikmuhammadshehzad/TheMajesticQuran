@@ -15,7 +15,17 @@ const Notes = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.mainContainer}>
-     
+      <View style={styles.headingContainer}>
+        <Pressable
+          onPress={() => {
+            navigation.goBack();
+          }}>
+          <ICONS.BackIcon />
+        </Pressable>
+        <View style={styles.titleContainer}>
+          <Text style={styles.heading}>Notes</Text>
+        </View>
+      </View>
       <SearchInput
         value={search}
         placeholder={'Search...'}

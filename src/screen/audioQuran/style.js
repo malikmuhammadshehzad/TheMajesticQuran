@@ -15,11 +15,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 12,
   },
-  
   heading: {
     fontSize: 27,
     color: 'white',
-    marginLeft: '14%',
+    marginLeft: '22%',
     fontWeight: '700',
   },
   indicator:{
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
   },
   surahContainer: {
     backgroundColor: 'white',
-    height: 95,
+    height: 85,
     marginBottom: 7,
     flexDirection: 'row',
     alignItems: 'center',
@@ -42,13 +41,14 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   index: {
+   
     fontSize: 22,
     fontWeight: '700',
     paddingLeft: 9,
     color: COLORS.navyBlue,
   },
   nameContainer: {
-    width: '53%',
+    width: '100%',
     paddingLeft: 9,
   },
   engName: {

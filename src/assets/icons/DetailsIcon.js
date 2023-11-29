@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
-const DetailsIcon = ({width = 24, height = 25, ...props}) => (
-  <Svg width={width} height={height} fill="none" {...props}>
+const DetailsIcon = ({size = 25, color, ...props}) => (
+  <Svg width={size} height={size} fill="none" {...props}>
     <Path
-      stroke="#fff"
+      stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
@@ -12,4 +12,3 @@ const DetailsIcon = ({width = 24, height = 25, ...props}) => (
   </Svg>
 );
 export default DetailsIcon;
-

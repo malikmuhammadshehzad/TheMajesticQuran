@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {COLORS, IMAGE} from '../../assets';
 import {useNavigation} from '@react-navigation/native';
+import styles from './style';
 const HomeScreen = () => {
   const navigation = useNavigation();
   return (
@@ -21,7 +22,11 @@ const HomeScreen = () => {
         <Text style={styles.text}> A Plain English Translation </Text>
       </View>
       <ScrollView contentContainerStyle={styles.scrollViewStyle}>
-        <Pressable style={styles.Category} onPress={() => {}}>
+        <Pressable
+          style={styles.Category}
+          onPress={() => {
+            navigation.navigate('quranArabic');
+          }}>
           <Image style={styles.image} source={IMAGE.alQuran} />
           <Text style={styles.categoryText}>Quran Arabic</Text>
         </Pressable>
@@ -33,92 +38,57 @@ const HomeScreen = () => {
           <Image style={styles.image} source={IMAGE.alQuran} />
           <Text style={styles.categoryText}>Arabic & English</Text>
         </Pressable>
-        <Pressable style={styles.Category} onPress={() => {}}>
+        <Pressable
+          style={styles.Category}
+          onPress={() => {
+            navigation.navigate('quranEnglish');
+          }}>
           <Image style={styles.image} source={IMAGE.alQuran} />
-          <Text style={styles.categoryText}>Quran Arabic</Text>
+          <Text style={styles.categoryText}>Quran English</Text>
         </Pressable>
-        <Pressable style={styles.Category} onPress={() => {}}>
+        <Pressable
+          style={styles.Category}
+          onPress={() => {
+            navigation.navigate('audioQuran');
+          }}>
           <Image style={styles.image} source={IMAGE.alQuran} />
-          <Text style={styles.categoryText}>Quran Arabic</Text>
+          <Text style={styles.categoryText}>Audio Quran</Text>
         </Pressable>
-        <Pressable style={styles.Category} onPress={() => {}}>
+        <Pressable
+          style={styles.Category}
+          onPress={() => {
+            navigation.navigate('searchScreen');
+          }}>
           <Image style={styles.image} source={IMAGE.alQuran} />
-          <Text style={styles.categoryText}>Quran Arabic</Text>
+          <Text style={styles.categoryText}>Search</Text>
         </Pressable>
-        <Pressable style={styles.Category} onPress={() => {}}>
+        <Pressable
+          style={styles.Category}
+          onPress={() => {
+            navigation.navigate('notes');
+          }}>
           <Image style={styles.image} source={IMAGE.alQuran} />
-          <Text style={styles.categoryText}>Quran Arabic</Text>
+          <Text style={styles.categoryText}>Notes</Text>
         </Pressable>
-        <Pressable style={styles.Category} onPress={() => {}}>
+        <Pressable
+          style={styles.Category}
+          onPress={() => {
+            navigation.navigate('podcast');
+          }}>
           <Image style={styles.image} source={IMAGE.alQuran} />
-          <Text style={styles.categoryText}>Quran Arabic</Text>
+          <Text style={styles.categoryText}>Podcast</Text>
         </Pressable>
-        <Pressable style={styles.Category} onPress={() => {}}>
+        <Pressable
+          style={styles.Category}
+          onPress={() => {
+            navigation.navigate('hades');
+          }}>
           <Image style={styles.image} source={IMAGE.alQuran} />
-          <Text style={styles.categoryText}>Quran Arabic</Text>
+          <Text style={styles.categoryText}>Hades</Text>
         </Pressable>
       </ScrollView>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  manContainer: {
-    flex: 1,
-  },
-  textContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#000080',
-    height: '15%',
-  },
-  heading: {
-    fontSize: 35,
-    fontWeight: 'bold',
-    color: 'white',
-  },
-  text: {
-    fontSize: 25,
-    color: 'white',
-  },
-  colorText: {
-    color: 'yellow',
-  },
-  scrollViewStyle: {
-    backgroundColor:COLORS.white,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-  },
-
-  Category: {
-    backgroundColor: 'white',
-    borderColor: 'yellow',
-    borderWidth: 5,
-    borderRadius: 17,
-    width: 160,
-    height: 150,
-    marginVertical: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  imageContainer: {
-    backgroundColor: 'coral',
-  },
-  image: {
-    resizeMode: 'contain',
-    height: '60%',
-    width: '100%',
-  },
-  categoryText: {
-    marginTop: 5,
-    fontSize: 18,
-    fontWeight: '700',
-    color: '#000080',
-    // backgroundColor:'coral'
-  },
-});
 
 export default HomeScreen;
