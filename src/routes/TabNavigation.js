@@ -22,6 +22,7 @@ import {
   Podcast,
   QuranArabic,
   QuranEnglish,
+  QuranEnglishSingleSurah,
   SearchScreen,
   SingleSurah,
   arabicAndEnglish,
@@ -166,6 +167,13 @@ const TabNavigation = () => {
         <Tab.Screen
           name="hades"
           component={Hades}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="quranEngSingleSurah"
+          component={QuranEnglishSingleSurah}
           options={{
             tabBarItemStyle: {display: 'none'},
           }}

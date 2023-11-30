@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 export const  QuranEngSingleSurahData = createAsyncThunk('QuranEngSingleSurahData', async  (paramData ,thunkApi) => {
   try {
     const response = await api.get(`/quranenglish?surah=${paramData}`);
-    // console.log('Single Surah :', response.data);
+    // console.log('main QuranEngSingleSurahData :', response.data);
     return response.data;
   } catch (error) {
     return thunkApi.rejectWithValue(error);
@@ -30,7 +30,7 @@ const  QuranEngSingleSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(QuranEngSingleSurahData.fulfilled, (state, action) => {
-      console.log("🚀 ~ file: QuranEngSingleSurahData.js:35 ~ builder.addCase ~ action:", action.payload)
+      // console.log("🚀 ~ file: QuranEngSingleSurahData.js:35 ~ builder.addCase ~ action:", action.payload)
       
       state.singleSurah = action.payload;
       state.isSuccess=true

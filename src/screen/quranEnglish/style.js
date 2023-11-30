@@ -1,3 +1,4 @@
+import {beginAsyncEvent} from 'react-native/Libraries/Performance/Systrace';
 import {COLORS} from '../../assets';
 
 const {StyleSheet} = require('react-native');
@@ -5,51 +6,66 @@ const {StyleSheet} = require('react-native');
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-  
-  },
-  mainTitleContainer: {
-    flexDirection: 'row',
-    height: '12%',
-    alignItems: 'center',
     backgroundColor: COLORS.navyBlue,
+    padding: 12,
   },
-  backIconContainer: {
-    width: '15%',
+  headingContainer: {
+    height: '8%',
     alignItems: 'center',
+    flexDirection: 'row',
+    marginBottom: 12,
   },
-  titleContainer: {
-    alignItems: 'center',
-    width: '70%',
+  titleContainer:{
+  width:"85%",
+  alignItems:'center'
   },
   title: {
     fontSize: 27,
+    color: 'white',
     fontWeight: '700',
-    color: COLORS.white,
+  },
+  indicator:{
+ marginTop:230
+  },
+  mainSurahContainer: {
+    flex: 1,
+  },
+  surahContainer: {
+    backgroundColor: 'white',
+    height: 95,
+    marginBottom: 7,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 12,
+    marginVertical: 12,
+  },
+  numContainer:{
+    width: '15%',
+    alignItems:'center'
+  },
+  index: {
+    fontSize: 22,
+    fontWeight: '700',
+    paddingLeft: 9,
+    color: COLORS.navyBlue,
+  },
+  nameContainer: {
+    width: '53%',
+    paddingLeft: 9,
+  },
+  engName: {
+    fontSize: 27,
+    fontWeight: '500',
+    color: COLORS.black,
   },
   romanName: {
-    color: COLORS.white,
-    fontSize: 18,
-    fontWeight: '500',
-  },
-  maiEngQuranText:{
-    padding:12
-  },
-  introContainer: {
-    alignItems: 'center',
-    width: '100%',
-    marginBottom:12
-  },
-  
-  introHeading: {
-    color: COLORS.navyBlue,
-    fontSize: 34,
-    fontWeight: '600',
-  },
-  engQuranText:{
+    fontSize: 17,
     color: COLORS.black,
-    fontSize: 22,
-    fontWeight: '500',
-    lineHeight: 37,
-  }
+  },
+  arabicName: {
+    width: '30%',
+    fontSize: 27,
+    color: COLORS.navyBlue,
+  },
 });
 export default styles;
