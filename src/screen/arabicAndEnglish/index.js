@@ -21,7 +21,7 @@ const ArabicAndEnglish = () => {
 
   const {surah, isSuccess} = useSelector(state => state.ArabicAndEng);
   const surahData = surah?.message;
-  console.log('surahData', surahData);
+  // console.log('surahData', surahData);
   useEffect(() => {
     dispatch(ArabicAndEngData());
     if (isSuccess) {

@@ -27,7 +27,7 @@ const HomeScreen = () => {
           onPress={() => {
             navigation.navigate('quranArabic');
           }}>
-          <Image style={styles.image} source={IMAGE.alQuran} />
+          <Image style={styles.image} source={IMAGE.quranArabic} />
           <Text style={styles.categoryText}>Quran Arabic</Text>
         </Pressable>
         <Pressable
@@ -35,7 +35,7 @@ const HomeScreen = () => {
           onPress={() => {
             navigation.navigate('arabicAndEnglish');
           }}>
-          <Image style={styles.image} source={IMAGE.alQuran} />
+          <Image style={styles.image} source={IMAGE.arabicEng} />
           <Text style={styles.categoryText}>Arabic & English</Text>
         </Pressable>
         <Pressable
@@ -43,7 +43,7 @@ const HomeScreen = () => {
           onPress={() => {
             navigation.navigate('quranEnglish');
           }}>
-          <Image style={styles.image} source={IMAGE.alQuran} />
+          <Image style={styles.image} source={IMAGE.quranEng} />
           <Text style={styles.categoryText}>Quran English</Text>
         </Pressable>
         <Pressable
@@ -51,7 +51,7 @@ const HomeScreen = () => {
           onPress={() => {
             navigation.navigate('audioQuran');
           }}>
-          <Image style={styles.image} source={IMAGE.alQuran} />
+          <Image style={styles.image} source={IMAGE.audio} />
           <Text style={styles.categoryText}>Audio Quran</Text>
         </Pressable>
         <Pressable
@@ -59,7 +59,7 @@ const HomeScreen = () => {
           onPress={() => {
             navigation.navigate('searchScreen');
           }}>
-          <Image style={styles.image} source={IMAGE.alQuran} />
+          <Image style={styles.image} source={IMAGE.search} />
           <Text style={styles.categoryText}>Search</Text>
         </Pressable>
         <Pressable
@@ -67,7 +67,7 @@ const HomeScreen = () => {
           onPress={() => {
             navigation.navigate('notes');
           }}>
-          <Image style={styles.image} source={IMAGE.alQuran} />
+          <Image style={styles.image} source={IMAGE.notes} />
           <Text style={styles.categoryText}>Notes</Text>
         </Pressable>
         <Pressable
@@ -75,7 +75,7 @@ const HomeScreen = () => {
           onPress={() => {
             navigation.navigate('podcast');
           }}>
-          <Image style={styles.image} source={IMAGE.alQuran} />
+          <Image style={styles.image} source={IMAGE.podcast} />
           <Text style={styles.categoryText}>Podcast</Text>
         </Pressable>
         <Pressable
@@ -83,7 +83,7 @@ const HomeScreen = () => {
           onPress={() => {
             navigation.navigate('hades');
           }}>
-          <Image style={styles.image} source={IMAGE.alQuran} />
+          <Image style={styles.image} source={IMAGE.hades} />
           <Text style={styles.categoryText}>Hades</Text>
         </Pressable>
       </ScrollView>
