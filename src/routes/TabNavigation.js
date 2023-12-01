@@ -18,12 +18,14 @@ import {ICONS} from '../assets';
 import {
   AudioQuran,
   Hades,
+  LoginScreen,
   Notes,
   Podcast,
   QuranArabic,
   QuranEnglish,
   QuranEnglishSingleSurah,
   SearchScreen,
+  SignupScreen,
   SingleSurah,
   arabicAndEnglish,
 } from '../screen';
@@ -174,6 +176,20 @@ const TabNavigation = () => {
         <Tab.Screen
           name="quranEngSingleSurah"
           component={QuranEnglishSingleSurah}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="login"
+          component={LoginScreen}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="signup"
+          component={SignupScreen}
           options={{
             tabBarItemStyle: {display: 'none'},
           }}

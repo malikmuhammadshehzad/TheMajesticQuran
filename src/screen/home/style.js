@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
       color: 'white',
     },
     colorText: {
-      color: 'yellow',
+      color:COLORS.yellow
     },
     scrollViewStyle: {
       backgroundColor:COLORS.white,

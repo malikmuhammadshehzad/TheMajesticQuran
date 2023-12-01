@@ -73,7 +73,7 @@ const HomeScreen = () => {
         <Pressable
           style={styles.Category}
           onPress={() => {
-            navigation.navigate('podcast');
+            navigation.navigate('login');
           }}>
           <Image style={styles.image} source={IMAGE.podcast} />
           <Text style={styles.categoryText}>Podcast</Text>

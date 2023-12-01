@@ -12,4 +12,8 @@ export const ICONS = {
   PlusIcon: require('./PlusIcon').default,
   ShareIcon: require('./ShareIcon').default,
   MinusIcon: require('./MinusIcon').default,
+  Forward: require('./ForwardIcon').default,
+  PhoneIcon: require('./PhoneIcon').default,
+   FillEyeOff: require('./FillEyeOff').default,
+    CloseLock: require('./CloseLockIcon').default,
 };

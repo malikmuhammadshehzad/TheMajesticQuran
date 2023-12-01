@@ -1,11 +1,18 @@
-import {  Text, TouchableOpacity } from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import { FONT} from '../../assets';
+import {FONT} from '../../assets';
 
-const MYButton = ({Label, press, bgColor, width='80%' , height=50, textColor}) => {
+const MYButton = ({
+  Label,
+  onPress,
+  bgColor,
+  width = '80%',
+  height = 50,
+  textColor,
+}) => {
   return (
     <TouchableOpacity
-    onPress={press}
+    onPress={onPress}
       style={{
         backgroundColor: bgColor,
         width: width,
@@ -13,20 +20,17 @@ const MYButton = ({Label, press, bgColor, width='80%' , height=50, textColor}) =
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        borderRadius: 22,
-      }}
-    >
+        borderRadius: 10,
+      }}>
       <Text
         style={{
           color: textColor,
           fontFamily: FONT.poppinsMedium,
-          fontSize: 18,
-          marginRight: 12,
-          paddingTop: 3,
+          fontSize: 25,
+          fontWeight: '800',
         }}>
         {Label}
       </Text>
-       
     </TouchableOpacity>
   );
 };
