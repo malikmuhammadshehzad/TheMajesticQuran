@@ -9,10 +9,13 @@ const MYButton = ({
   width = '80%',
   height = 50,
   textColor,
+  borderRadius = 10,
+  fontWeight = '800',
+  fontSize = 25,
 }) => {
   return (
     <TouchableOpacity
-    onPress={onPress}
+      onPress={onPress}
       style={{
         backgroundColor: bgColor,
         width: width,
@@ -20,14 +23,14 @@ const MYButton = ({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        borderRadius: 10,
+        borderRadius: borderRadius,
       }}>
       <Text
         style={{
           color: textColor,
           fontFamily: FONT.poppinsMedium,
-          fontSize: 25,
-          fontWeight: '800',
+          fontSize: fontSize,
+          fontWeight: fontWeight,
         }}>
         {Label}
       </Text>

@@ -22,7 +22,7 @@ export default SearchInput;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    backgroundColor:'yellow',
+    backgroundColor:COLORS.yellow,
     height: 50,
     borderRadius: 9,
     alignItems: 'center',
