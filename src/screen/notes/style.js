@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
       },
       shareContainer:{
         position: 'absolute',
-        top: 645,
-        right: 10,
+        top: "90%",
+        right: "3%",
         zIndex: 999,
       },
       listText:{

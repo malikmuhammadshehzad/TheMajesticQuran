@@ -14,11 +14,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     marginBottom: 12,
-    justifyContent:'space-between'
+    justifyContent:'space-between',
+
   },
   heading: {
     fontSize: 27,
     color: 'white',
+    width:'75%',
     fontWeight: '700',
   },
   indicator:{
