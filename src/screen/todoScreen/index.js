@@ -33,7 +33,7 @@ const Notes = () => {
           </TouchableOpacity>
         </Pressable>
       </ScrollView>
-      <TouchableOpacity  style={styles.shareContainer}>
+      <TouchableOpacity  style={styles.plusContainer}>
         <ICONS.PlusIcon size={70} bgColor={COLORS.yellow} />
       </TouchableOpacity>
     </View>

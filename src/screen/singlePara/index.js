@@ -37,6 +37,9 @@ const SinglePara = ({route}) => {
   // console.log('singlePara screen data ', singleParaData[0].ayats);
   // console.log('testing', surah.roman_name !== singlePara.roman_name );
   // console.log('!singleParaData',!singleParaData);
+  // const handleAyatData = lastSeen=>{
+  //    navigation.navigate('quranArabic' , {lastSeen} )
+  // }
   return (
     <View style={styles.mainContainer}>
       <View style={styles.mainTitleContainer}>
@@ -57,14 +60,16 @@ const SinglePara = ({route}) => {
         <FlatList
           data={singleParaData}
           showsVerticalScrollIndicator={false}
-         // keyExtractor={item => `${item.id}-${item.title}`}
           keyExtractor={(item, index) => item.id ? `${item.id}-${item.title}` : `${index}`}
           renderItem={({item}) => (
-            <View style={styles.mainContainer}>
+            <View style={styles.flatContainer}>
               <Pressable onPress={()=>{}} style={styles.iconContainer}>
-                <ICONS.FavoriteIcon color="#F4D201" />
+                {/* <ICONS.FavoriteIcon color="#F4D201" /> */}
+                <ICONS.EyeOneIcon />
+                {/* <Text style={styles.lastseen} >last Seen</Text> */}
               </Pressable>
               <Text style={styles.ayat}>{item?.ayats[0]?.ayat}</Text>
+              {/* <Text style={styles.ayat}>{item?.ayats[0]?.ayat}</Text> */}
             </View>
           )}
         />

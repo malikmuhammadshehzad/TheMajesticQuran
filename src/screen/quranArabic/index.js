@@ -14,7 +14,9 @@ import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
 import {QuranArabicData} from '../../Redux/Reducers/QuranArabicReducer';
 
-const QuranArabic = () => {
+const QuranArabic = ({route}) => {
+  // const {lastSeen} = route?.lastSeen;
+  console.log('lastSeenData', route);
   const navigation = useNavigation();
   const [search, setSearch] = useState('');
   const [searchData, setSearchData] = useState([]);
@@ -61,6 +63,7 @@ const QuranArabic = () => {
         placeholder={'Search...'}
         onChangeText={text => setSearch(text)}
       />
+       
       {!searchData ? (
         <ActivityIndicator
           style={styles.indicator}
@@ -91,6 +94,7 @@ const QuranArabic = () => {
         />
       )}
     </View>
+    
   );
 };
 

@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
        marginVertical:12,
        borderRadius:12
       },
-      shareContainer:{
+      plusContainer:{
         position: 'absolute',
-        top: 645,
-        right: 10,
+        top: "90%",
+        right: "3%",
         zIndex: 999,
       },
       listText:{

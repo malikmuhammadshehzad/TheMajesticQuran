@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
        marginVertical:12,
        borderRadius:12
       },
-      shareContainer:{
+      plusContainer:{
         position: 'absolute',
         top: "90%",
         right: "3%",

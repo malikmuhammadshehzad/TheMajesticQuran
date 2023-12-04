@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "../../assets";
+import { COLORS, FONT } from "../../assets";
 
 const styles = StyleSheet.create({
     manContainer: {
@@ -12,12 +12,16 @@ const styles = StyleSheet.create({
       height: '15%',
     },
     heading: {
-      fontSize: 35,
-      fontWeight: 'bold',
-      color: 'white',
+      fontSize:37,
+     fontFamily:FONT.MinionProRegular,
+      color:COLORS.white,
+      // backgroundColor:'red',
+     
     },
     text: {
-      fontSize: 25,
+      fontSize: 22,
+      fontFamily:'Centaur',
+      marginTop:-3,
       color: 'white',
     },
     colorText: {
@@ -33,8 +37,8 @@ const styles = StyleSheet.create({
     },
   
     Category: {
-      backgroundColor: 'white',
-      borderColor: 'yellow',
+      backgroundColor:COLORS.white,
+      borderColor: COLORS.yellow,
       borderWidth: 5,
       borderRadius: 17,
       width: "45%",
@@ -53,9 +57,10 @@ const styles = StyleSheet.create({
     },
     categoryText: {
       marginTop: 5,
-      fontSize: 18,
-      fontWeight: '700',
-      color: '#000080',
+      fontWeight:'bold',
+      fontSize: 17,
+      fontFamily:FONT.impact,
+      color: COLORS.navyBlue,
      
     },
   });
