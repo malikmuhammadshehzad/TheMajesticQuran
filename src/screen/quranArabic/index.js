@@ -12,8 +12,8 @@ import {ICONS} from '../../assets';
 import {SearchInput} from '../../components';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
-import { QuranArabicData } from '../../Redux/Reducers/QuranArabicReducer';
- 
+import {QuranArabicData} from '../../Redux/Reducers/QuranArabicReducer';
+
 const QuranArabic = () => {
   const navigation = useNavigation();
   const [search, setSearch] = useState('');
@@ -22,7 +22,7 @@ const QuranArabic = () => {
 
   const {Para, isSuccess} = useSelector(state => state.QuranArabic);
   const ParaData = Para;
-  console.log('ParaData file', Para);
+  // console.log('ParaData file', Para);
   useEffect(() => {
     dispatch(QuranArabicData());
     if (isSuccess) {
@@ -43,7 +43,7 @@ const QuranArabic = () => {
     }
   }, [search]);
   const handleSingleSurah = Para => {
-    navigation.navigate('singleSurah', {Para});
+    navigation.navigate('singlePara', {Para});
   };
   return (
     <View style={styles.mainContainer}>
@@ -55,7 +55,6 @@ const QuranArabic = () => {
           <ICONS.BackIcon />
         </Pressable>
         <Text style={styles.heading}>Quran Arabic</Text>
-      
       </View>
       <SearchInput
         value={search}
@@ -79,10 +78,12 @@ const QuranArabic = () => {
               style={styles.surahContainer}
               onPress={() => handleSingleSurah(item)}>
               <View style={styles.numContainer}>
-                <Text style={styles.index}>{item.para_number}9.</Text>
+                <Text style={styles.index}>{item.para_number}.</Text>
               </View>
               <View style={styles.nameContainer}>
-                <Text style={styles.engName}>{item.roman_name}</Text>
+                <Text numberOfLines={1} style={styles.engName}>
+                  {item.roman_name}
+                </Text>
               </View>
               <Text style={styles.arabicName}>{item.arabic_name}</Text>
             </Pressable>

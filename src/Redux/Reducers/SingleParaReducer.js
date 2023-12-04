@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import api from '../../api';
 
 const INITIAL_STATE = {
-  singleSurah: [],
+  singlePara: [],
   isSuccess:false,
   isLoading: false,
   isError: false,
@@ -11,7 +11,8 @@ const INITIAL_STATE = {
 
 export const   SingleParaData = createAsyncThunk('SingleParaData', async  (paramData ,thunkApi) => {
   try {
-    const response = await api.get(`/quranenglish?surah=${paramData}`);
+     
+    const response = await api.get(`/quranarabic?para=${paramData}`);
     // console.log('main SingleParaData :', response.data);
     return response.data;
   } catch (error) {
@@ -32,7 +33,7 @@ const  SingleParaSlice = createSlice({
     builder.addCase(SingleParaData.fulfilled, (state, action) => {
       // console.log("🚀 ~ file: SingleParaData.js:35 ~ builder.addCase ~ action:", action.payload)
       
-      state.singleSurah = action.payload;
+      state.singlePara = action.payload;
       state.isSuccess=true
       state.isLoading = false;
     });

@@ -26,6 +26,7 @@ import {
   QuranEnglishSingleSurah,
   SearchScreen,
   SignupScreen,
+  SinglePara,
   SingleSurah,
   arabicAndEnglish,
 } from '../screen';
@@ -190,6 +191,13 @@ const TabNavigation = () => {
         <Tab.Screen
           name="signup"
           component={SignupScreen}
+          options={{
+            tabBarItemStyle: {display: 'none'},
+          }}
+        />
+        <Tab.Screen
+          name="singlePara"
+          component={SinglePara}
           options={{
             tabBarItemStyle: {display: 'none'},
           }}

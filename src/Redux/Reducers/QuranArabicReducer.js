@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 export const QuranArabicData = createAsyncThunk('QuranArabicData', async thunkApi => {
   try {
     const response = await api.get('/para');
-    console.log(' Product response :', response.data);
+    // console.log(' Product response :', response.data);
     return response.data;
   } catch (error) {
     return thunkApi.rejectWithValue(error);

@@ -39,8 +39,9 @@ const styles = StyleSheet.create({
     marginVertical: 12,
   },
   numContainer:{
-    width: '15%',
-    alignItems:'center'
+    width: '13%',
+    alignItems:'center',
+    // backgroundColor:'red'
   },
   index: {
     fontSize: 22,
@@ -49,11 +50,12 @@ const styles = StyleSheet.create({
     color: COLORS.navyBlue,
   },
   nameContainer: {
-    width: '53%',
+    width: '50%',
     paddingLeft: 9,
+    // backgroundColor:'yellow'
   },
   engName: {
-    fontSize: 27,
+    fontSize: 21,
     fontWeight: '500',
     color: COLORS.black,
   },
@@ -62,8 +64,9 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   arabicName: {
-    width: '30%',
-    fontSize: 27,
+    // backgroundColor:'red',
+    width: '34%',
+    fontSize: 22,
     color: COLORS.navyBlue,
   },
 });

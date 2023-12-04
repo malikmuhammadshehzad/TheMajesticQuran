@@ -17,4 +17,5 @@ export {default as FontsizeScreen} from './fontsizeScreen';
 export {default as AdmissionForm} from './admissionForm';
 export {default as  LoginScreen} from './LoginScreen';
 export {default as   SignupScreen} from './SignupScreen';
+export {default as    SinglePara} from './singlePara';
 export {default as QuranEnglishSingleSurah} from './quranEngSingleSurah';
