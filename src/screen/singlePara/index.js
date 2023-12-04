@@ -28,8 +28,11 @@ const SinglePara = ({route}) => {
   }, [Para]);
   const {singlePara} = useSelector(state => state.SinglePara);
 
-  console.log('🚀 ~ file: index.js:31 ~ singlePara ~ singlePara:', singlePara);
-  const singleParaData = singlePara?.message[0].ayats;
+  console.log(
+    '🚀 ~ file: index.js:31 ~ singlePara ~ singlePara:',
+    singlePara?.message,
+  );
+  const singleParaData = singlePara?.message;
   // console.log("🚀 ~ file: index.js:34 ~ singlePara ~ singleParaData:", singleParaData[0].surah.roman_name)
   // console.log('singlePara screen data ', singleParaData[0].ayats);
   // console.log('testing', surah.roman_name !== singlePara.roman_name );
@@ -48,24 +51,24 @@ const SinglePara = ({route}) => {
           <Text style={styles.title}>{Para.roman_name}</Text>
         </View>
       </View>
-
       {!singleParaData ? (
         <ActivityIndicator size="large" color="white" />
       ) : (
         <FlatList
           data={singleParaData}
           showsVerticalScrollIndicator={false}
-          keyExtractor={item => `${item.id}-${item.title}`}
+         // keyExtractor={item => `${item.id}-${item.title}`}
+          keyExtractor={(item, index) => item.id ? `${item.id}-${item.title}` : `${index}`}
           renderItem={({item}) => (
             <View style={styles.mainContainer}>
               <Pressable onPress={()=>{}} style={styles.iconContainer}>
                 <ICONS.FavoriteIcon color="#F4D201" />
               </Pressable>
-              <Text style={styles.ayat}>{item.ayat}</Text>
+              <Text style={styles.ayat}>{item?.ayats[0]?.ayat}</Text>
             </View>
           )}
         />
-      )}
+      )}  
     </View>
   );
 };

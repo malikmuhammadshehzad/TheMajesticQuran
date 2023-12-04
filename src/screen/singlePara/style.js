@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     width: '70%',
   },
   iconContainer: {
-    height: 50,
-    backgroundColor: 'yellow',
+    height: 30,
+    // backgroundColor: 'yellow',
     // justifyContent: 'center',
     // alignItems: 'flex-end',
     // width: '95%',

@@ -61,7 +61,7 @@ const QuranArabic = () => {
         placeholder={'Search...'}
         onChangeText={text => setSearch(text)}
       />
-      {!searchData.length ? (
+      {!searchData ? (
         <ActivityIndicator
           style={styles.indicator}
           size="large"
