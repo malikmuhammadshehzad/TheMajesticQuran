@@ -1,7 +1,7 @@
-import {beginAsyncEvent} from 'react-native/Libraries/Performance/Systrace';
-import {COLORS} from '../../assets';
+import { beginAsyncEvent } from 'react-native/Libraries/Performance/Systrace';
+import { COLORS, FONT } from '../../assets';
 
-const {StyleSheet} = require('react-native');
+const { StyleSheet } = require('react-native');
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -14,17 +14,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     marginBottom: 12,
-    justifyContent:'space-between',
+    justifyContent: 'space-between',
 
   },
   heading: {
     fontSize: 27,
     color: 'white',
-    width:'75%',
+    width: '75%',
     fontWeight: '700',
   },
-  indicator:{
- marginTop:230
+  indicator: {
+    marginTop: 230
   },
   mainSurahContainer: {
     flex: 1,
@@ -38,9 +38,9 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginVertical: 12,
   },
-  numContainer:{
+  numContainer: {
     width: '13%',
-    alignItems:'center',
+    alignItems: 'center',
     // backgroundColor:'red'
   },
   index: {
@@ -55,18 +55,22 @@ const styles = StyleSheet.create({
     // backgroundColor:'yellow'
   },
   engName: {
-    fontSize: 21,
-    fontWeight: '500',
+    fontSize: 23,
+    fontFamily: FONT.RobotoMedium,
+
     color: COLORS.black,
   },
   romanName: {
     fontSize: 17,
     color: COLORS.black,
   },
+  arabicContainer: {
+   
+  },
   arabicName: {
-    // backgroundColor:'red',
+    fontFamily: FONT.QuranFont,
     width: '34%',
-    fontSize: 22,
+    fontSize: 50,
     color: COLORS.navyBlue,
   },
 });

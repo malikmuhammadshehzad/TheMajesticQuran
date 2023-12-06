@@ -88,7 +88,9 @@ const QuranArabic = ({route}) => {
                   {item.roman_name}
                 </Text>
               </View>
-              <Text style={styles.arabicName}>{item.arabic_name}</Text>
+             
+              <Text    style={styles.arabicName}>{item.arabic_name}</Text>
+              
             </Pressable>
           )}
         />

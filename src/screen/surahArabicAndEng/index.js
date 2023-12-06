@@ -1,10 +1,10 @@
-import {FlatList, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import styles from './style';
-import {COLORS, ICONS} from '../../assets';
-import {useSelector} from 'react-redux';
+import { COLORS, ICONS } from '../../assets';
+import { useSelector } from 'react-redux';
 const SurahArabicAndEng = () => {
-  const {singleSurah} = useSelector(state => state.SurahReducer);
+  const { singleSurah } = useSelector(state => state.SurahReducer);
   const singleSurahData = singleSurah?.message;
   console.log('singleSurahData:Arabic and English ', singleSurahData[0].surah.title);
   const surahName = singleSurahData[0].surah.roman_name;
@@ -14,7 +14,7 @@ const SurahArabicAndEng = () => {
         data={singleSurahData}
         showsVerticalScrollIndicator={false}
         keyExtractor={item => `${item.id}-${item.title}`}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <View style={styles.mainContainer}>
             <View style={styles.titleContainer}>
               <Text style={styles.number}>{item.ending_ayat}</Text>
@@ -24,9 +24,12 @@ const SurahArabicAndEng = () => {
 
             <Text style={styles.surahTitle}>{item.surah.title}</Text>
 
-            <View style={styles.iconContainer}>
+            <Text style={styles.bismila}>{item.surah.surah_story_heading}</Text>
+
+            <Text style={styles.store}>{item.surah.surahStory}</Text>
+            {/* <View style={styles.iconContainer}>
               <ICONS.FavoriteIcon color="#F4D201" />
-            </View>
+            </View> */}
             <Text style={styles.ayat}>{item.ayat}</Text>
             <Text style={styles.heading}>{item.title}</Text>
             <Text style={styles.paragraph}>{item.paragraph}</Text>
@@ -34,7 +37,7 @@ const SurahArabicAndEng = () => {
         )}
       />
 
-      <View style={styles.audioContainer}>
+      {/* <View style={styles.audioContainer}>
         <Text style={styles.surahName}>{surahName}</Text>
         <View style={styles.audioIconContainer}>
          
@@ -43,7 +46,7 @@ const SurahArabicAndEng = () => {
            <ICONS.manIcon size={30} color={COLORS.navyBlue} />
            <ICONS.DownloadIcon size={35}   />
         </View>
-      </View>
+      </View> */}
     </>
   );
 };

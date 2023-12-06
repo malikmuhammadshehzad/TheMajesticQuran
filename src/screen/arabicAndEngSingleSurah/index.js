@@ -57,7 +57,7 @@ const SingleSurah = ({route}) => {
           <Tab.Navigator
             screenOptions={{
               tabBarLabelStyle: {fontSize: 16, fontWeight: 'bold', width: 130},
-              tabBarStyle: {backgroundColor: 'yellow'},
+              tabBarStyle: {backgroundColor: COLORS.yellow},
               tabBarIndicatorStyle: {backgroundColor: COLORS.navyBlue},
               tabBarActiveTintColor: COLORS.navyBlue,
             }}>

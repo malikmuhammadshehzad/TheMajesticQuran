@@ -1,5 +1,5 @@
 import {beginAsyncEvent} from 'react-native/Libraries/Performance/Systrace';
-import {COLORS} from '../../assets';
+import {COLORS, FONT} from '../../assets';
 
 const {StyleSheet} = require('react-native');
 
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
   },
   arabicName: {
     width: '30%',
-    fontSize: 27,
+    fontSize: 50,
+    fontFamily:FONT.QuranFont,
     color: COLORS.navyBlue,
   },
 });

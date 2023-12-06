@@ -1,6 +1,6 @@
-import {COLORS} from '../../assets';
+import { COLORS, FONT } from '../../assets';
 
-const {StyleSheet} = require('react-native');
+const { StyleSheet } = require('react-native');
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -9,26 +9,44 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     flexDirection: 'row',
-
     width: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   arabicTitle: {
-    fontSize: 37,
+    fontSize: 65,
     color: COLORS.navyBlue,
-    fontWeight: '700',
+    fontFamily:FONT.QuranFont,
+    //  backgroundColor:'coral'
   },
   number: {
-    fontSize: 27,
+    fontSize: 27, 
     color: COLORS.navyBlue,
     fontWeight: '700',
   },
   surahTitle: {
-    marginTop: 9,
+    marginBottom: 15,
     fontSize: 19,
     color: COLORS.navyBlue,
-    fontWeight: '600',
+    fontFamily: FONT.RobotoMedium,
+  },
+  bismila: {
+    marginTop:11,
+    marginBottom: 15,
+    // backgroundColor:'coral',
+    fontSize: 37,
+    fontFamily:FONT.QuranFont,
+    color: COLORS.black,
+    fontFamily: FONT.RobotoMedium,
+  },
+  
+  store: {
+    textAlign: 'center',
+    marginBottom: 15,
+    fontSize: 25,
+    color: COLORS.black,
+    fontFamily: FONT.MinionProRegular,
+
   },
   iconContainer: {
     height: 60,
@@ -38,13 +56,13 @@ const styles = StyleSheet.create({
   },
   ayat: {
     marginTop: 9,
-    fontSize: 33,
+    fontSize: 57,
     color: COLORS.black,
-    fontWeight: '600',
+    fontFamily:FONT.QuranFont
   },
   heading: {
     marginVertical: 12,
-    fontSize: 22,
+    fontSize: 23,
     color: COLORS.red,
     fontWeight: '500',
   },
@@ -57,21 +75,21 @@ const styles = StyleSheet.create({
   audioContainer: {
     backgroundColor: 'yellow',
     height: 50,
-    alignItems:'center',
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   surahName: {
     fontSize: 22,
-    marginLeft:9,
+    marginLeft: 9,
     fontWeight: '600',
     color: COLORS.black,
   },
   audioIconContainer: {
     flexDirection: 'row',
-     marginTop:3,
-    justifyContent:'space-between',
-    width:'50%'
+    marginTop: 3,
+    justifyContent: 'space-between',
+    width: '50%'
   },
 });
 export default styles;

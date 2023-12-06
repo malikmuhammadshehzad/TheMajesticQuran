@@ -77,7 +77,7 @@ const ArabicAndEnglish = () => {
               style={styles.surahContainer}
               onPress={() => handleSingleSurah(item)}>
               <View style={styles.numContainer}>
-                <Text style={styles.index}>{item.surah_number}9.</Text>
+                <Text style={styles.index}>{item.surah_number}.</Text>
               </View>
               <View style={styles.nameContainer}>
                 <Text style={styles.engName}>{item.roman_name}</Text>

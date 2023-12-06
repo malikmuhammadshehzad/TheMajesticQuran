@@ -20,6 +20,7 @@ const HomeScreen = () => {
           The Majestic <Text style={styles.colorText}>Quran </Text>
         </Text>
         <Text style={styles.text}> A Plain English Translation </Text>
+         <Text style={styles.line} >──────────────────</Text>
       </View>
       <ScrollView contentContainerStyle={styles.scrollViewStyle}>
         <Pressable

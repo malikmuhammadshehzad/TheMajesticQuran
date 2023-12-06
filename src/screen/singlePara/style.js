@@ -1,4 +1,4 @@
-import {COLORS} from '../../assets';
+import {COLORS, FONT} from '../../assets';
 
 const {StyleSheet} = require('react-native');
 
@@ -27,9 +27,7 @@ const styles = StyleSheet.create({
     color: COLORS.white,
   },
   iconContainer: {
-    // marginHorizontal:10, 
-    // backgroundColor: 'yellow',
-    marginBottom:-6,
+    // marginBottom:-6,
     justifyContent:'center',
     width:'15%',
     alignItems:'center',
@@ -41,18 +39,18 @@ const styles = StyleSheet.create({
    color:COLORS.black
   },
   flatContainer:{
-flex:1,
-// backgroundColor:'red',
+ 
 paddingHorizontal:"5%",
 marginVertical:11
 
   },
   ayat: {
-    lineHeight:45,
-    fontSize: 22,
-    fontWeight: '600',
+    lineHeight:55,
+    fontSize: 40,
+   fontFamily:FONT.QuranFont,
     color: COLORS.black,
-    //  backgroundColor:'yellow'
+    //  backgroundColor:'yellow',
+
   },
 
   romanName: {
