@@ -14,7 +14,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import TodoScreen from '../screen/todoScreen';
 import HomeScreen from '../screen/home';
 import Favorite from '../screen/favorite';
-import {ICONS} from '../assets';
+import {COLORS, ICONS} from '../assets';
 import {
   AudioQuran,
   Hades,
@@ -52,7 +52,7 @@ const TabNavigation = () => {
         screenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarActiveTintColor: 'yellow',
+          tabBarActiveTintColor:COLORS.yellow,
           tabBarInactiveTintColor: 'white',
 
           tabBarStyle: {

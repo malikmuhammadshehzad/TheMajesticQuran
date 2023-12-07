@@ -1,5 +1,5 @@
 import {beginAsyncEvent} from 'react-native/Libraries/Performance/Systrace';
-import {COLORS} from '../../assets';
+import {COLORS, FONT} from '../../assets';
 
 const {StyleSheet} = require('react-native');
 
@@ -14,15 +14,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     marginBottom: 12,
+    
   },
   titleContainer:{
-  width:"85%",
+  width:"80%",
   alignItems:'center'
   },
+  BackIcon:{
+ 
+  width:'12%',
+  height:'88%',
+  alignItems:'center',
+  justifyContent:'center'
+  },
   title: {
-    fontSize: 27,
+    fontSize: 29,
     color: 'white',
-    fontWeight: '700',
+  
+    fontFamily:FONT.RobotoBold
   },
   indicator:{
  marginTop:230

@@ -31,7 +31,7 @@ const ArabicAndEnglish = () => {
   useEffect(() => {
     if (search && surahData) {
       const filterData = surahData.filter(item => {
-        const value = item.roman_name.toLowerCase();
+        const value = item.title.toLowerCase();
         return value.includes(search.toLowerCase());
       });
       setSearchData(filterData);

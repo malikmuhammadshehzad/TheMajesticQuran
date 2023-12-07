@@ -1,3 +1,4 @@
+
 import {
   ActivityIndicator,
   FlatList,
@@ -47,7 +48,7 @@ const  QuranEnglish = () => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headingContainer}>
-        <Pressable
+        <Pressable style={styles.BackIcon}
           onPress={() => {
             navigation.goBack();
           }}>

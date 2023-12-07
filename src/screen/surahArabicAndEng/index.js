@@ -21,7 +21,6 @@ const SurahArabicAndEng = () => {
               <Text style={styles.arabicTitle}>{item.surah.arabic_name}</Text>
               <Text style={styles.number}>{item.starting_ayat}</Text>
             </View>
-
             <Text style={styles.surahTitle}>{item.surah.title}</Text>
 
             <Text style={styles.bismila}>{item.surah.surah_story_heading}</Text>

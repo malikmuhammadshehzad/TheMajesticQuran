@@ -68,9 +68,11 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     marginVertical: 12,
-    fontSize: 22,
-    color: COLORS.black,
-    fontWeight: '500',
+    fontSize:22,
+    color:COLORS.black,
+    fontFamily: FONT.Centaur,
+    fontSize: 33,
+    lineHeight:40
   },
   audioContainer: {
     backgroundColor: 'yellow',

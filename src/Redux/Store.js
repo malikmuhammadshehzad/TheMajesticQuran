@@ -4,6 +4,7 @@ import SingleSurahReducer from './Reducers/SingleSurahReducer';
 import QuranEngSingleSurahReducer from './Reducers/QuranEngSingleSurahReducer';
 import QuranArabicReducer from './Reducers/QuranArabicReducer';
 import SingleParaReducer from './Reducers/SingleParaReducer';
+import PodcastReducer from './Reducers/PodcastReducer';
  
 
 const reducers = combineReducers({
@@ -12,6 +13,7 @@ const reducers = combineReducers({
   QuranAndEng:QuranEngSingleSurahReducer,
   QuranArabic:QuranArabicReducer,
   SinglePara:SingleParaReducer,
+  PodCast:PodcastReducer
 });
 
 export const store = configureStore({

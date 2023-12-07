@@ -1,4 +1,4 @@
-import {COLORS} from '../../assets';
+import {COLORS, FONT} from '../../assets';
 
 const {StyleSheet} = require('react-native');
 
@@ -39,8 +39,21 @@ export const styles = StyleSheet.create({
     color:COLORS.navyBlue
   },
   scrollContainer:{
-    flex:1,
-    
-    padding:12
+    flex:1, 
+    padding:12,
+  },
+  videoContainer:{
+ marginBottom:19,
+  },
+  title:{
+    fontFamily:FONT.RobotoBold,
+    fontSize:21,
+    color:COLORS.black,
+    marginVertical:7,
+  },
+  discription:{
+    fontFamily:FONT.MinionProRegular,
+    marginBottom:11,
+    fontSize:20
   }
 });
