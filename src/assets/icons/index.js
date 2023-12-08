@@ -14,6 +14,8 @@ export const ICONS = {
   MinusIcon: require('./MinusIcon').default,
   Forward: require('./ForwardIcon').default,
   PhoneIcon: require('./PhoneIcon').default,
-   FillEyeOff: require('./FillEyeOff').default,
-    CloseLock: require('./CloseLockIcon').default,
+  FillEyeOff: require('./FillEyeOff').default,
+  CloseLock: require('./CloseLockIcon').default,
+  CheckIcon: require('./CheckIcon').default,
+   CancleIcon: require('./CancleIcon').default,
 };

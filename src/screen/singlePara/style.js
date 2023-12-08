@@ -1,11 +1,11 @@
-import {COLORS, FONT} from '../../assets';
+import { COLORS, FONT } from '../../assets';
 
-const {StyleSheet} = require('react-native');
+const { StyleSheet } = require('react-native');
 
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    
+
   },
   mainTitleContainer: {
     backgroundColor: COLORS.navyBlue,
@@ -28,29 +28,26 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     // marginBottom:-6,
-    justifyContent:'center',
-    width:'15%',
-    alignItems:'center',
-    justifyContent:'center'
+    justifyContent: 'center',
+    width: '15%',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  lastseen:{
-   backgroundColor:'coral',
-   marginTop:-9,
-   color:COLORS.black
+  lastseen: {
+    backgroundColor: 'coral',
+    marginTop: -9,
+    color: COLORS.black
   },
-  flatContainer:{
- 
-paddingHorizontal:"5%",
-marginVertical:11
-
+  flatContainer: {
+    paddingHorizontal: "5%",
+    marginVertical: 11,
+    // backgroundColor:'coral'
   },
   ayat: {
-    lineHeight:55,
     fontSize: 40,
-   fontFamily:FONT.QuranFont,
+    fontFamily: FONT.QuranFont,
     color: COLORS.black,
     //  backgroundColor:'yellow',
-
   },
 
   romanName: {

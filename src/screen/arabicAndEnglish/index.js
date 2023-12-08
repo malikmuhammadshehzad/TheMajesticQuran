@@ -24,7 +24,7 @@ const ArabicAndEnglish = () => {
   // console.log('surahData', surahData);
   useEffect(() => {
     dispatch(ArabicAndEngData());
-    if (isSuccess) {
+    if (isSuccess) {          
       setSearchData(surahData);
     }
   }, [isSuccess]);
