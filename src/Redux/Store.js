@@ -5,15 +5,22 @@ import QuranEngSingleSurahReducer from './Reducers/QuranEngSingleSurahReducer';
 import QuranArabicReducer from './Reducers/QuranArabicReducer';
 import SingleParaReducer from './Reducers/SingleParaReducer';
 import PodcastReducer from './Reducers/PodcastReducer';
- 
-
+import AuthReducer from './Reducers/AuthReducer';
+// import storage from '@react-native-async-storage/async-storage';
+// import{persistReducer , persistStore}  from 'redux-persist';
+//  const persistConfig={
+// key :'root',
+// storage
+//  }
 const reducers = combineReducers({
   ArabicAndEng: ArabicAndEngReducer,
   SurahReducer:SingleSurahReducer,
   QuranAndEng:QuranEngSingleSurahReducer,
   QuranArabic:QuranArabicReducer,
   SinglePara:SingleParaReducer,
-  PodCast:PodcastReducer
+  PodCast:PodcastReducer,
+  Auth: AuthReducer,
+  // Auth: persistReducer( persistConfig , AuthReducer  ) ,
 });
 
 export const store = configureStore({
@@ -21,3 +28,6 @@ export const store = configureStore({
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({serializableCheck: false}),
 });
+
+// export const persister = persistStore(store)
+

@@ -1,25 +1,32 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
-import {styles} from './style';
-import {PassWordInput, PhoneInput, UserInput} from '../../components';
-import {MyButton, PasswordInput} from '../../components/common';
-import {COLORS, ICONS} from '../../assets';
-import {useNavigation} from '@react-navigation/native';
-import {useDispatch, useSelector} from 'react-redux';
+import { ScrollView, Text, View, ActivityIndicator, } from 'react-native';
+import React, { useState } from 'react';
+import { styles } from './style';
+import { PassWordInput, PhoneInput, UserInput } from '../../components';
+import { MyButton, PasswordInput } from '../../components/common';
+import { COLORS, ICONS } from '../../assets';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../../Redux/Reducers/AuthReducer';
 const LoginScreen = () => {
   const [number, setNumber] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  // const {userData, isLoading} = useSelector(state => state.Auth);
+  const { userData, isLoading } = useSelector(state => state.Auth);
   const LoginFunction = async () => {
     const obj = {
-      number: number,
+      mobile: number,
       password: password,
     };
-
     await dispatch(loginUser(obj));
-    console.log('userData:', userData);
+    console.log(' login userData:', userData);
+    setNumber('')
+    setPassword('')
+    if (userData) {
+      navigation.navigate('todo');
+    } else {
+      console.log('User data not available after login.');
+  }  
   };
   return (
     <View style={styles.manContainer}>
@@ -29,7 +36,7 @@ const LoginScreen = () => {
         </Text>
         <Text style={styles.text}> A Plain English Translation </Text>
       </View>
-      <ScrollView style={{flex: 1}}>
+      <ScrollView style={{ flex: 1 }}>
         <View style={styles.loginMainContainer}>
           <Text style={styles.title}>Login</Text>
 
@@ -49,31 +56,18 @@ const LoginScreen = () => {
           <View style={styles.forgetContainer}>
             <Text style={styles.forgetText}>Forget Password</Text>
           </View>
-          {/* {isLoading ? (
-          <ActivityIndicator  size={'large'} />
-        ) : (
-          <MyButton
-          onPress={() => {
-            {}
-            navigation.navigate('podcast');
-          }}
-          Label="Login"
-          textColor={COLORS.white}
-          height={49}
-          width={'70%'}
-          bgColor={COLORS.navyBlue}
-        />
-        )} */}
-          <MyButton
-            onPress={() => {
-              navigation.navigate('podcast');
-            }}
-            Label="Login"
-            textColor={COLORS.white}
-            height={49}
-            width={'70%'}
-            bgColor={COLORS.navyBlue}
-          />
+          {isLoading ? (
+            <ActivityIndicator size={'large'} color={COLORS.navyBlue} />
+          ) : (
+            <MyButton
+              onPress={LoginFunction}
+              Label="Login"
+              textColor={COLORS.white}
+              height={49}
+              width={'70%'}
+              bgColor={COLORS.navyBlue}
+            />
+          )}
           <View style={styles.btnContainer}>
             <Text style={styles.noAccountText}>Don't have an account?</Text>
             <MyButton

@@ -5,54 +5,43 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
-import {Modal} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import React, { useState } from 'react';
+import { Modal } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 import TodoScreen from '../screen/todoScreen';
 import HomeScreen from '../screen/home';
 import Favorite from '../screen/favorite';
-import {COLORS, ICONS} from '../assets';
+import { COLORS, ICONS } from '../assets';
 import {
   AudioQuran,
   Hades,
   LoginScreen,
-  Notes,
+  Notes, 
   Podcast,
   QuranArabic,
   QuranEnglish,
   QuranEnglishSingleSurah,
   SearchScreen,
-  SignupScreen,
+  SignupScreen, 
   SinglePara,
   SingleSurah,
   arabicAndEnglish,
 } from '../screen';
 import DrawerNavigation from './DrawerNavigation';
-import {useNavigation, DrawerActions} from '@react-navigation/native';
-import DrawerContent from './DrawerContent';
+import { useNavigation, DrawerActions } from '@react-navigation/native';
 const Tab = createBottomTabNavigator();
-
 const TabNavigation = () => {
   const navigation = useNavigation();
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const openDrawer = () => {
-    setIsDrawerOpen(true);
-  };
-
-  const closeDrawer = () => {
-    setIsDrawerOpen(false);
-  };
   return (
     <>
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarActiveTintColor:COLORS.yellow,
+          tabBarActiveTintColor: COLORS.yellow,
           tabBarInactiveTintColor: 'white',
 
           tabBarStyle: {
@@ -63,7 +52,7 @@ const TabNavigation = () => {
           name="Home"
           component={HomeScreen}
           options={{
-            tabBarIcon: ({color}) => (
+            tabBarIcon: ({ color }) => (
               <FontAwesome name="home" size={33} color={color} />
             ),
           }}
@@ -72,14 +61,14 @@ const TabNavigation = () => {
           name="favorite"
           component={Favorite}
           options={{
-            tabBarIcon: ({color}) => <ICONS.FavoriteIcon color={color} />,
+            tabBarIcon: ({ color }) => <ICONS.FavoriteIcon color={color} />,
           }}
         />
         <Tab.Screen
           name="todo"
           component={TodoScreen}
           options={{
-            tabBarIcon: ({color}) => (
+            tabBarIcon: ({ color }) => (
               <FontAwesome5 name="edit" size={27} color={color} />
             ),
           }}
@@ -88,7 +77,7 @@ const TabNavigation = () => {
           name="search"
           component={SearchScreen}
           options={{
-            tabBarIcon: ({color}) => (
+            tabBarIcon: ({ color }) => (
               <FontAwesome name="search" size={27} color={color} />
             ),
           }}
@@ -97,7 +86,7 @@ const TabNavigation = () => {
           name="menu"
           component={DrawerNavigation}
           options={{
-            tabBarIcon: ({color}) => (
+            tabBarIcon: ({ color }) => (
               <Entypo name="menu" size={35} color={color} />
             ),
             tabBarPressColor: 'transparent',
@@ -114,14 +103,14 @@ const TabNavigation = () => {
           name="arabicAndEnglish"
           component={arabicAndEnglish}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
         <Tab.Screen
           name="singleSurah"
           component={SingleSurah}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
 
@@ -129,77 +118,79 @@ const TabNavigation = () => {
           name="quranArabic"
           component={QuranArabic}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
         <Tab.Screen
-          name= 'quranEnglish'
+          name='quranEnglish'
           component={QuranEnglish}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
         <Tab.Screen
           name="audioQuran"
           component={AudioQuran}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
         <Tab.Screen
           name="searchScreen"
           component={SearchScreen}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
+    
         <Tab.Screen
           name="notes"
           component={Notes}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
+         <Tab.Screen
+              name="signup"
+              component={SignupScreen}
+              options={{
+                tabBarItemStyle: { display: 'none' },
+              }}
+            />
+          <Tab.Screen
+              name="login"
+              component={LoginScreen}
+              options={{
+                tabBarItemStyle: { display: 'none' },
+              }}
+            />
         <Tab.Screen
           name="podcast"
           component={Podcast}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
         <Tab.Screen
           name="hades"
           component={Hades}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
         <Tab.Screen
           name="quranEngSingleSurah"
           component={QuranEnglishSingleSurah}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
-        <Tab.Screen
-          name="login"
-          component={LoginScreen}
-          options={{
-            tabBarItemStyle: {display: 'none'},
-          }}
-        />
-        <Tab.Screen
-          name="signup"
-          component={SignupScreen}
-          options={{
-            tabBarItemStyle: {display: 'none'},
-          }}
-        />
+
         <Tab.Screen
           name="singlePara"
           component={SinglePara}
           options={{
-            tabBarItemStyle: {display: 'none'},
+            tabBarItemStyle: { display: 'none' },
           }}
         />
       </Tab.Navigator>

@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {useEffect} from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import AppNavigation from './src/routes';
 import { Provider } from 'react-redux'
 import { store } from './src/Redux/Store';
+import { PersistGate } from 'redux-persist/integration/react';
+
 const App = () => {
   useEffect(() => {
-    
-    // Hide the splash screen after 3 seconds
     const timeoutId = setTimeout(() => {
       SplashScreen.hide();
       console.log("SplashScreen");
@@ -17,10 +17,10 @@ const App = () => {
     };
   }, []);
 
-  return(
-     <Provider store={store} > 
-       <AppNavigation />
-     </Provider>
+  return (
+    <Provider store={store} >    
+        <AppNavigation />
+    </Provider>
   )
 };
 

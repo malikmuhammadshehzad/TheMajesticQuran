@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   listText: {
     padding: 12,
-    width: '87%'
+    width: '82%'
   },
   title: {
     fontSize: 25,
@@ -57,14 +57,21 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginVertical: 1
   },
+  shareIcon: {
+
+    width: '18%',
+    alignItems: 'center',
+    height: '100%',
+    justifyContent: 'center'
+  },
   iconContainer: {
     marginBottom: 22,
     // backgroundColor: 'coral',
     width: '100%',
     height: '7%',
-    justifyContent:'space-between',
-    flexDirection:'row',
-   alignItems:'center'
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 })
 export default styles

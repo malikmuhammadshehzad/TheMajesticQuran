@@ -15,6 +15,8 @@ const Podcast = () => {
   const dispatch = useDispatch();
   const { podcast, isSuccess } = useSelector(state => state.PodCast)
   // console.log("podcast Data from Reducer", podcast)
+  const { userData} = useSelector(state => state.Auth)  
+  
   useEffect(() => {
     dispatch(PodcastData())
     if (isSuccess) {
@@ -43,7 +45,9 @@ const Podcast = () => {
         </Text>
         <Text style={styles.text}> A Plain English Translation </Text>
       </View>
+      {}
       <View style={styles.userContainer}>
+        
         <Text style={styles.userName}>Welcome Malik</Text>
         <MYButton
           Label="logout"

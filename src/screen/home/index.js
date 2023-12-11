@@ -8,10 +8,12 @@ import {
   Pressable,
   ScrollView,
 } from 'react-native';
-import {COLORS, IMAGE} from '../../assets';
-import {useNavigation} from '@react-navigation/native';
+import { COLORS, IMAGE } from '../../assets';
+import { useNavigation } from '@react-navigation/native';
 import styles from './style';
+import { useSelector } from 'react-redux';
 const HomeScreen = () => {
+  const { userData } = useSelector(state => state.Auth)
   const navigation = useNavigation();
   return (
     <View style={styles.manContainer}>
@@ -20,7 +22,7 @@ const HomeScreen = () => {
           The Majestic <Text style={styles.colorText}>Quran </Text>
         </Text>
         <Text style={styles.text}> A Plain English Translation </Text>
-         <Text style={styles.line} >──────────────────</Text>
+        <Text style={styles.line} >──────────────────</Text>
       </View>
       <ScrollView contentContainerStyle={styles.scrollViewStyle}>
         <Pressable
@@ -66,7 +68,11 @@ const HomeScreen = () => {
         <Pressable
           style={styles.Category}
           onPress={() => {
-            navigation.navigate('notes');
+            if (userData) {
+              navigation.navigate('notes');
+            } else {
+              navigation.navigate('login');
+            }
           }}>
           <Image style={styles.image} source={IMAGE.notes} />
           <Text style={styles.categoryText}>Notes</Text>

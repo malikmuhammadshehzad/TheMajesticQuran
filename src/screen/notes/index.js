@@ -11,6 +11,7 @@ import styles from './style';
 import { MYButton, MyInput, PlusButton, SearchInput } from '../../components';
 import { COLORS, ICONS } from '../../assets';
 import { useNavigation } from '@react-navigation/native';
+import Share from 'react-native-share';
 import Modal from "react-native-modal";
 const Notes = () => {
   const [search, setSearch] = useState('');
@@ -22,6 +23,21 @@ const Notes = () => {
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [discription, setDiscription] = useState('');
   const navigation = useNavigation();
+
+  const share = async (item) => {
+    const options = {
+      subject: item.title,
+      message: item.discription,
+      recipient: item.title,
+    }
+    try {
+      const res = await Share.open(options)
+      console.log(res);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
     setTitle('')
@@ -70,9 +86,9 @@ const Notes = () => {
         const value = item.title.toLowerCase();
         return value.includes(search.toLowerCase())
       })
-      setSearch(filterData)
+      setFilteredData(filterData);
     } else {
-      setFilteredData(todoList);  
+      setFilteredData(todoList);
     }
   }, [search, todoList])
   return (
@@ -100,11 +116,11 @@ const Notes = () => {
           renderItem={({ item, index }) => (
             <Pressable onPress={() => { EdittoggleModal(); handleEdit(item, index) }} style={styles.mainList}>
               <View style={styles.listText}>
-                <Text style={styles.title}>{item.title}</Text>
+                <Text numberOfLines={1} style={styles.title}>{item.title}</Text>
                 <Text numberOfLines={1} style={styles.text}>{item.discription}</Text>
                 <Text style={styles.text}>create at 29/11/2023</Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity style={styles.shareIcon} onPress={() => { share(item) }} >
                 <ICONS.ShareIcon color={COLORS.navyBlue} />
               </TouchableOpacity>
             </Pressable>

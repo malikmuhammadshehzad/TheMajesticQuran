@@ -13,11 +13,10 @@ export const PodcastData = createAsyncThunk('PodcastData', async thunkApi => {
 
     try {
         const response = await api.get('/Showpodcast');
-
         console.log(' Product response :', response);
         return response.data;
     } catch (error) {
-        console.log("error ", error);
+        console.log(" podcast error ", error);
         return thunkApi.rejectWithValue(error)
     }
 });
