@@ -20,6 +20,7 @@ import {
   Hades,
   LoginScreen,
   Notes, 
+  Player, 
   Podcast,
   QuranArabic,
   QuranEnglish,
@@ -124,6 +125,13 @@ const TabNavigation = () => {
         <Tab.Screen
           name='quranEnglish'
           component={QuranEnglish}
+          options={{
+            tabBarItemStyle: { display: 'none' },
+          }}
+        />
+        <Tab.Screen
+          name='player'
+          component={Player}
           options={{
             tabBarItemStyle: { display: 'none' },
           }}

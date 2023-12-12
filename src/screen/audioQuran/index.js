@@ -41,15 +41,15 @@ const AudioQuran = () => {
       }
     }
   }, [search]);
-  const handleSingleSurah = surah => {
-    navigation.navigate('singleSurah', {surah});
+  const handleSingleSurah =  surah => {
+    navigation.navigate('player', {surah});
   };
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headingContainer}>
         <Pressable
           onPress={() => {
-            navigation.goBack();
+            navigation.navigate('home')
           }}>
           <ICONS.BackIcon />
         </Pressable>
@@ -77,7 +77,7 @@ const AudioQuran = () => {
               style={styles.surahContainer}
               onPress={() => handleSingleSurah(item)}>
               <View style={styles.numContainer} >
-                <Text style={styles.index}>{item.surah_number}9.</Text>
+                <Text style={styles.index}>{item.surah_number}.</Text>
               </View>
               <View style={styles.nameContainer}>
                 <Text style={styles.engName}>{item.roman_name}</Text>

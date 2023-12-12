@@ -18,4 +18,5 @@ export {default as AdmissionForm} from './admissionForm';
 export {default as  LoginScreen} from './LoginScreen';
 export {default as   SignupScreen} from './SignupScreen';
 export {default as    SinglePara} from './singlePara';
+export {default as     Player} from './player';
 export {default as QuranEnglishSingleSurah} from './quranEngSingleSurah';

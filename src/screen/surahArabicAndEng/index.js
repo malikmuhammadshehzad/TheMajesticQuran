@@ -36,16 +36,7 @@ const SurahArabicAndEng = () => {
         )}
       />
 
-      {/* <View style={styles.audioContainer}>
-        <Text style={styles.surahName}>{surahName}</Text>
-        <View style={styles.audioIconContainer}>
-         
-          <ICONS.PlayIcon size={35} color={COLORS.navyBlue} />
-          <ICONS.SquareIcon size={30} color={COLORS.navyBlue} />
-           <ICONS.manIcon size={30} color={COLORS.navyBlue} />
-           <ICONS.DownloadIcon size={35}   />
-        </View>
-      </View> */}
+    
     </>
   );
 };

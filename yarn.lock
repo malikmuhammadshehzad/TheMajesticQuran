@@ -1712,6 +1712,11 @@
     prompts "^2.4.0"
     semver "^7.5.2"
 
+"@react-native-community/slider@^4.4.4":
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.4.4.tgz#0b2168cd0f53683c27b36b4917d01514d6dda1bb"
+  integrity sha512-PEq9mTEVwOh+wuBvuuIslvC8gyGHfS2G01SJJWdbb4xz+u5559iuQXqDOUxQgFuN45dM0Ut1wMFDDdawN9RTEA==
+
 "@react-native/assets-registry@^0.72.0":
   version "0.72.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets-registry/-/assets-registry-0.72.0.tgz#c82a76a1d86ec0c3907be76f7faf97a32bbed05d"
@@ -5891,6 +5896,11 @@ react-native-tab-view@^3.5.2:
   integrity sha512-nE5WqjbeEPsWQx4mtz81QGVvgHRhujTNIIZiMCx3Bj6CBFDafbk7XZp9ocmtzXUQaZ4bhtVS43R4FIiR4LboJw==
   dependencies:
     use-latest-callback "^0.1.5"
+
+react-native-track-player@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-track-player/-/react-native-track-player-4.0.1.tgz#df80c27290db610f92dc73d89ecae8e354acb28d"
+  integrity sha512-DpqKL4TQS0kGlHwEtmMrL++mdgWb+uc75eQiP3vfYSlgvAJjbXbkL9h+cofndSuq4TTCp8jclAK+hZKqtMw6+A==
 
 react-native-vector-icons@^10.0.2:
   version "10.0.2"

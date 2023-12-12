@@ -81,7 +81,7 @@ const ArabicAndEnglish = () => {
               </View>
               <View style={styles.nameContainer}>
                 <Text style={styles.engName}>{item.roman_name}</Text>
-                <Text style={styles.romanName}>{item.title}</Text>
+                <Text numberOfLines={1} style={styles.romanName}>{item.title}</Text>
               </View>
               <Text style={styles.arabicName}>{item.arabic_name}</Text>
             </Pressable>
