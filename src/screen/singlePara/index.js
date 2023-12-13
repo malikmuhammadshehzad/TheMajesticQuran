@@ -2,44 +2,35 @@ import {
   ActivityIndicator,
   FlatList,
   Pressable,
-  StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect} from 'react';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import SurahIntro from '../surahIntro';
-import SurahFootNotes from '../surahFootNotes';
-import SurahArabicAndEng from '../surahArabicAndEng';
+import React, {useEffect , useRef } from 'react';
 import {COLORS, ICONS} from '../../assets';
 import styles from './style';
 import {useNavigation} from '@react-navigation/native';
-import {useDispatch, useSelector} from 'react-redux';
-
+import {useDispatch, useSelector} from 'react-redux'
 import {SingleParaData} from '../../Redux/Reducers/SingleParaReducer';
-const Tab = createMaterialTopTabNavigator();
 const SinglePara = ({route}) => {
+  const flatListRef = useRef(null);
   const {Para} = route.params;
   const navigation = useNavigation();
-  console.log(' route param data singlePara', Para.roman_name);
+  // console.log(' route param data singlePara', Para.roman_name);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(SingleParaData(Para.roman_name));
   }, [Para]);
   const {singlePara} = useSelector(state => state.SinglePara);
 
-  console.log(
-    '🚀 ~ file: index.js:31 ~ singlePara ~ singlePara:',
-    singlePara?.message,
-  );
+  // console.log(
+  //   '🚀 ~ file: index.js:31 ~ singlePara ~ singlePara:',
+  //   singlePara?.message,
+  // );
   const singleParaData = singlePara?.message;
-  // console.log("🚀 ~ file: index.js:34 ~ singlePara ~ singleParaData:", singleParaData[0].surah.roman_name)
-  // console.log('singlePara screen data ', singleParaData[0].ayats);
-  // console.log('testing', surah.roman_name !== singlePara.roman_name );
-  // console.log('!singleParaData',!singleParaData);
-  // const handleAyatData = lastSeen=>{
-  //    navigation.navigate('quranArabic' , {lastSeen} )
-  // }
+  
+
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.mainTitleContainer}>
@@ -55,19 +46,21 @@ const SinglePara = ({route}) => {
         </View>
       </View>
       {!singleParaData ? (
-        <ActivityIndicator size="large" color="white" />
+        <ActivityIndicator size="large" color={COLORS.navyBlue} style={{marginTop:270}} />
       ) : (
         <FlatList
           data={singleParaData}
+          ref={flatListRef}
           showsVerticalScrollIndicator={false}
           keyExtractor={(item, index) => item.id ? `${item.id}-${item.title}` : `${index}`}
-          renderItem={({item}) => (
+          renderItem={({item , index}) => (
             <View style={styles.flatContainer}>
-              <Pressable onPress={()=>{}} style={styles.iconContainer}>
+              <TouchableOpacity onPress={()=>{}} style={styles.iconContainer}>              
                 {/* <ICONS.FavoriteIcon color="#F4D201" /> */}
-                <ICONS.EyeOneIcon />
+                <ICONS.EyeOneIcon size={27} />
+                {/* <Text style={{color:COLORS.navyBlue , backgroundColor:'coral'}}>{index}</Text> */}
                 {/* <Text style={styles.lastseen} >last Seen</Text> */}
-              </Pressable>
+              </TouchableOpacity>
               <Text style={styles.ayat}>{item?.ayats[0]?.ayat}</Text>
               {/* <Text style={styles.ayat}>{item?.ayats[0]?.ayat}</Text> */}
             </View>

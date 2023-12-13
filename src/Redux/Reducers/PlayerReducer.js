@@ -9,7 +9,7 @@ const INITIAL_STATE = {
     errorMessage: null,
 };
 
-export const PlayerData = createAsyncThunk('PlayerData', async thunkApi => {
+export const PlayerData = createAsyncThunk('PlayerData', async  (paramData, thunkApi) => {
 
     try {
         const response = await api.get(`/quranaudio?surah=${paramData}`);

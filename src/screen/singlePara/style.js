@@ -27,11 +27,10 @@ const styles = StyleSheet.create({
     color: COLORS.white,
   },
   iconContainer: {
-    // marginBottom:-6,
-    justifyContent: 'center',
+    // backgroundColor:'coral',
     width: '15%',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   lastseen: {
     backgroundColor: 'coral',

@@ -89,14 +89,6 @@ const Podcast = () => {
           <Text numberOfLines={2} style={styles.discription} >In a world of motivational speakers, celebrity life coaches and
             online influencers - how does a Muslim develop a strong mindset. We sit down with
             Shaykh Abdullah Oduro from Dallas, Texas to discuss ways in which Muslims can foster their own unique mindset in light of their faith. </Text>
-          <YoutubePlayer
-            height={209}
-            play={false}
-            videoId='VWNYeRaCVu8'
-          // webViewStyle={{backgroundColor:'coral'}}
-          />
-          <Text style={styles.title} >Woman</Text>
-          <Text style={styles.discription} >What it means to be a Woman | Dr. Haifaa Younis (Full Podcast)"</Text>
         </View>
       </ScrollView>
     </View>

@@ -52,7 +52,7 @@ const QuranArabic = ({route}) => {
       <View style={styles.headingContainer}>
         <Pressable
           onPress={() => {
-            navigation.goBack();
+            navigation.navigate('Home');
           }}>
           <ICONS.BackIcon />
         </Pressable>

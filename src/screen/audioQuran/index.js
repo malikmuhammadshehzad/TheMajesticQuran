@@ -21,7 +21,7 @@ const AudioQuran = () => {
 
   const {surah, isSuccess} = useSelector(state => state.ArabicAndEng);
   const surahData = surah?.message;
-  console.log('surahData', surahData);
+  // console.log('surahData', surahData);
   useEffect(() => {
     dispatch(ArabicAndEngData());
     if (isSuccess) {
@@ -49,7 +49,7 @@ const AudioQuran = () => {
       <View style={styles.headingContainer}>
         <Pressable
           onPress={() => {
-            navigation.navigate('home')
+            navigation.navigate('Home')
           }}>
           <ICONS.BackIcon />
         </Pressable>
